@@ -1,0 +1,11 @@
+kind,level,group,mean_speed_mps,mean_dir_deg,n
+wind,overall,all,6.445,291.164,236688.000
+wind,season,DJF,7.638,267.007,58488.000
+wind,season,MAM,6.243,316.328,59616.000
+wind,season,JJA,5.409,294.370,59616.000
+wind,season,SON,6.513,284.676,58968.000
+current,overall,all,0.067,181.323,236688.000
+current,season,DJF,0.067,265.323,58488.000
+current,season,MAM,0.067,131.125,59616.000
+current,season,JJA,0.067,197.933,59616.000
+current,season,SON,0.067,68.937,58968.000
