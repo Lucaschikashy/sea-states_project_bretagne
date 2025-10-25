@@ -7,3 +7,6 @@ __pycache__/
 .env
 .vscode/
 settings.json
+tmp_mhkit/
+tmp_mhkit82/
+tmp_scipy/
