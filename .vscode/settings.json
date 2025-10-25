@@ -1,5 +1,5 @@
 {
-    "chatgpt.openOnStartup": true,
+    "chatgpt.openOnStartup": false,
     "chatgpt.preferWsl": true,
-    "chatgpt.runCodexInWindowsSubsystemForLinux": true
+    "chatgpt.runCodexInWindowsSubsystemForLinux": false
 }
