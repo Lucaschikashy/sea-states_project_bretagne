@@ -8,7 +8,7 @@ ang   = 285 # wave direction (deg)
 nr    = 30  # number of wave rays
 simtime = 3600*1.5 # propagate 1.5 hour
 nt    = 1200 # number of time steps
-fname = 'GMRTv4_1_1_20231026topo.asc' # bathymetry file
+fname = 'GMRTv4_4_0_20251107topo.asc' # bathymetry file
 
 # bathymetry
 fid = open(fname)
