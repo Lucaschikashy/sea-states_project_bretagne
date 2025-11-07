@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import numpy as np
 import matplotlib.pyplot as plt
 from ocean_wave_tracing import Wave_tracing
@@ -6,20 +8,19 @@ import cmocean
 period= 5.0 # wave period (s)
 ang   = 285 # wave direction (deg)
 nr    = 30  # number of wave rays
-simtime = 3600*1.5 # propagate 1.5 hour
+simtime = 3600*4 # propagate 1.5 hour
 nt    = 1200 # number of time steps
-fname = 'GMRTv4_4_0_20251107topo.asc' # bathymetry file
+fname = Path(__file__).resolve().parent / 'GMRTv4_4_0_20251107topo.asc' # bathymetry file
 
 # bathymetry
-fid = open(fname)
-ncols = int(fid.readline().split()[1])
-nrows = int(fid.readline().split()[1])
-lonll = float(fid.readline().split()[1])
-latll = float(fid.readline().split()[1])
-dd = float(fid.readline().split()[1])
+with fname.open() as fid:
+    ncols = int(fid.readline().split()[1])
+    nrows = int(fid.readline().split()[1])
+    lonll = float(fid.readline().split()[1])
+    latll = float(fid.readline().split()[1])
+    dd = float(fid.readline().split()[1])
 dx = dd*6378.e3*np.pi/180*np.cos(np.pi/180*latll)
 dy = dd*6378.e3*np.pi/180
-fid.close()
 bathy = -np.flipud(np.loadtxt(fname,skiprows=6))
 
 # ray tracing
