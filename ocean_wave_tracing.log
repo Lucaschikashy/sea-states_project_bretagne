@@ -82,3 +82,10 @@ WARNING:util_methods:Depth is defined as positive. Thus, negative depth will be 
 INFO:ocean_wave_tracing:Courant number is 0.87
 INFO:ocean_wave_tracing:Assuming uniform horizontal resolution in each direction
 INFO:root:Stoppet at time idt: 0
+INFO:root:
+Started
+INFO:root:bathymetry checker should ideally support xarray ds or da
+WARNING:util_methods:Depth is defined as positive. Thus, negative depth will be treated as Land.
+INFO:ocean_wave_tracing:Courant number is 0.82
+INFO:ocean_wave_tracing:Assuming uniform horizontal resolution in each direction
+INFO:root:Stoppet at time idt: 0

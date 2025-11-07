@@ -1,8 +1,9 @@
+from pathlib import Path
+
 import numpy as np
 import matplotlib.pyplot as plt
 from ocean_wave_tracing import Wave_tracing
 import cmocean
-from pathlib import Path
 
 period= 5.0 # wave period (s)
 ang   = 105 # wave direction (deg)
@@ -10,17 +11,18 @@ nr    = 50  # number of wave rays
 simtime = 3600*8 # propagate 8 hour
 nt    = 2000 # number of time steps
 fname = Path(__file__).resolve().parent / 'GMRTv4_4_0_20251107topo.asc' # bathymetry file
+fig_dir = Path(__file__).resolve().parent / "figures"
+fig_dir.mkdir(parents=True, exist_ok=True)
 
 # bathymetry
-fid = open(fname)
-ncols = int(fid.readline().split()[1])
-nrows = int(fid.readline().split()[1])
-lonll = float(fid.readline().split()[1])
-latll = float(fid.readline().split()[1])
-dd = float(fid.readline().split()[1])
+with fname.open() as fid:
+    ncols = int(fid.readline().split()[1])
+    nrows = int(fid.readline().split()[1])
+    lonll = float(fid.readline().split()[1])
+    latll = float(fid.readline().split()[1])
+    dd = float(fid.readline().split()[1])
 dx = dd*6378.e3*np.pi/180*np.cos(np.pi/180*latll)
 dy = dd*6378.e3*np.pi/180
-fid.close()
 bathy = -np.flipud(np.loadtxt(fname,skiprows=6))
 
 # ray tracing
@@ -60,6 +62,7 @@ pc.set_clim((-np.max(wt.d),0))
 plt.xlabel('x (m)')
 plt.ylabel('y (m)')
 plt.title('Wave rays')
+fig.savefig(fig_dir / "wave_rays.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 # wave energy flux density estimation
@@ -90,4 +93,5 @@ pc.set_clim((0,np.max(e[~np.isnan(e)]/escale)))
 plt.xlabel('x (m)')
 plt.ylabel('y (m)')
 plt.title('Relative wave energy flux density')
+fig.savefig(fig_dir / "relative_wave_energy_flux_density.png", dpi=300, bbox_inches='tight')
 plt.show()
