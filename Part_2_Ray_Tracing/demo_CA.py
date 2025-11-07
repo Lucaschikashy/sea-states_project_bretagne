@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from ocean_wave_tracing import Wave_tracing
 import cmocean
+from pathlib import Path
 
 period= 20.0 # wave period (s)
 ang   = -20. # wave direction (deg)
