@@ -5,7 +5,7 @@ import cmocean
 from pathlib import Path
 
 period= 5.0 # wave period (s)
-ang   = -75. # wave direction (deg)
+ang   = 105 # wave direction (deg)
 nr    = 30  # number of wave rays
 simtime = 3600*1.5 # propagate 1.5 hour
 nt    = 1200 # number of time steps
