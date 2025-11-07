@@ -6,9 +6,9 @@ from pathlib import Path
 
 period= 5.0 # wave period (s)
 ang   = 105 # wave direction (deg)
-nr    = 100  # number of wave rays
-simtime = 3600*5 # propagate 1.5 hour
-nt    = 1200 # number of time steps
+nr    = 50  # number of wave rays
+simtime = 3600*8 # propagate 8 hour
+nt    = 2000 # number of time steps
 fname = Path(__file__).resolve().parent / 'GMRTv4_4_0_20251107topo.asc' # bathymetry file
 
 # bathymetry
