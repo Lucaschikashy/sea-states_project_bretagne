@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 from ocean_wave_tracing import Wave_tracing
 import cmocean
 
-period= 5.0 # wave period (s)
+period= 15.0 # wave period (s)
 ang   = 105 # wave direction (deg)
-nr    = 50  # number of wave rays
-simtime = 3600*8 # propagate 8 hour
-nt    = 2000 # number of time steps
+nr    = 300  # number of wave rays
+simtime = 3600*2.5 # propagate 2.5 hour
+nt    = 5000 # number of time steps
 fname = Path(__file__).resolve().parent / 'GMRTv4_4_0_20251107topo.asc' # bathymetry file
 fig_dir = Path(__file__).resolve().parent / "figures"
 fig_dir.mkdir(parents=True, exist_ok=True)
