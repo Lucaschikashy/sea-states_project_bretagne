@@ -10,7 +10,7 @@ ang   = 105 # wave direction (deg)
 nr_case1    = 100  # number of wave rays for Case 1(less rays so its easier to see the main direction of the rays)
 nr_case2    = 1000  # number of wave rays for Case 2(more rays so the energy flux resolution is better)
 simtime = 3600*2.5 # propagate 2.5 hour
-nt    = 5000 # number of time steps
+nt    = 5000 # number of time steps, try to increase to limit edge cases
 fname = Path(__file__).resolve().parent / 'GMRTv4_4_0_20251107topo.asc' # bathymetry file
 fig_dir = Path(__file__).resolve().parent / "figures"
 fig_dir.mkdir(parents=True, exist_ok=True)
@@ -104,11 +104,14 @@ elif np.mod(ang,360)<225 and np.mod(ang,360)>=135:
     escale = e[round(nrows/2),-1]
 else:
     escale = e[-1,round(ncols/2)]
+
+# limit the cmap maxvalue to 98th percentile
+e_max = np.percentile(e[~np.isnan(e)], 98)
 fig, ax = plt.subplots()
 ax.set_aspect('equal')
 cmap = plt.cm.get_cmap("jet")
 cmap.set_bad(color='gray')
-pc = ax.pcolormesh(wt_case2.x,wt_case2.y,e/escale,shading='auto',cmap=cmap)
+pc = ax.pcolormesh(wt_case2.x,wt_case2.y,e/escale,shading='auto',cmap=cmap, vmax=e_max)
 fig.colorbar(pc)
 ax.set_xlim((0,dx*(ncols-1)))
 ax.set_ylim((0,dy*(nrows-1)))
@@ -118,3 +121,6 @@ plt.ylabel('y (m)')
 plt.title('Relative wave energy flux density')
 fig.savefig(fig_dir / "relative_wave_energy_flux_density.png", dpi=300, bbox_inches='tight')
 plt.show()
+
+
+# try to integrate a max lim for the density so it shows a more differentiated result
