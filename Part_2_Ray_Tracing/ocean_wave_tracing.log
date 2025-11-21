@@ -49,3 +49,34 @@ INFO:root:bathymetry checker should ideally support xarray ds or da
 ERROR:ocean_wave_tracing:Theta0 must be either float or numpy array. Terminating.
 INFO:root:bathymetry checker should ideally support xarray ds or da
 ERROR:ocean_wave_tracing:Theta0 must be either float or numpy array. Terminating.
+INFO:root:bathymetry checker should ideally support xarray ds or da
+WARNING:util_methods:Depth is defined as positive. Thus, negative depth will be treated as Land.
+INFO:ocean_wave_tracing:Courant number is 0.15
+INFO:ocean_wave_tracing:Assuming uniform horizontal resolution in each direction
+INFO:root:Stoppet at time idt: 0
+INFO:root:bathymetry checker should ideally support xarray ds or da
+INFO:ocean_wave_tracing:Courant number is 0.15
+INFO:ocean_wave_tracing:Assuming uniform horizontal resolution in each direction
+INFO:root:Stoppet at time idt: 0
+INFO:root:bathymetry checker should ideally support xarray ds or da
+ERROR:ocean_wave_tracing:Theta0 must be either float or numpy array. Terminating.
+INFO:root:bathymetry checker should ideally support xarray ds or da
+ERROR:ocean_wave_tracing:Theta0 must be either float or numpy array. Terminating.
+INFO:root:bathymetry checker should ideally support xarray ds or da
+ERROR:ocean_wave_tracing:Theta0 must be either float or numpy array. Terminating.
+INFO:root:bathymetry checker should ideally support xarray ds or da
+ERROR:ocean_wave_tracing:Theta0 must be either float or numpy array. Terminating.
+INFO:root:bathymetry checker should ideally support xarray ds or da
+ERROR:ocean_wave_tracing:Theta0 must be either float or numpy array. Terminating.
+INFO:root:bathymetry checker should ideally support xarray ds or da
+ERROR:ocean_wave_tracing:Theta0 must be either float or numpy array. Terminating.
+INFO:root:bathymetry checker should ideally support xarray ds or da
+ERROR:ocean_wave_tracing:Theta0 must be either float or numpy array. Terminating.
+INFO:root:bathymetry checker should ideally support xarray ds or da
+INFO:ocean_wave_tracing:Courant number is 0.38
+INFO:ocean_wave_tracing:Assuming uniform horizontal resolution in each direction
+INFO:root:Stoppet at time idt: 0
+INFO:root:bathymetry checker should ideally support xarray ds or da
+INFO:ocean_wave_tracing:Courant number is 0.38
+INFO:ocean_wave_tracing:Assuming uniform horizontal resolution in each direction
+INFO:root:Stoppet at time idt: 0
