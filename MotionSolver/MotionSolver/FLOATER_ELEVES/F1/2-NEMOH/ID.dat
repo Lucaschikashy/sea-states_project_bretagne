@@ -1,0 +1,2 @@
+1                ! Number of characters of the name of the run (e.g 4)
+.                ! name of the working folder (example 'test')
