@@ -2,7 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import spectrum as SS
 import floating_reader as FL
-from scipy import signal 
+from scipy import signal
+from pathlib import Path
 
 ###############################################################################################################################
 # Significant Wave Height
@@ -39,15 +40,16 @@ dt= 0.1
 
 # FLOATER
 floater_folder='barge_data'
+base_dir = Path(__file__).resolve().parent  # allow running from any working directory
 
 # Reading inputs files
-MIfull =np.loadtxt('./'+floater_folder+'/MassInertia.dat',skiprows=2)
-KMfull =np.loadtxt('./'+floater_folder+'/MooringStiffness.dat',skiprows=2)
-KHfull =np.loadtxt('./'+floater_folder+'/HydrostaticStiffness.dat',skiprows=2)
-BQfull =np.loadtxt('./'+floater_folder+'/QuadraticDamping.dat',skiprows=2)
-RAOfull=np.loadtxt('./'+floater_folder+'/Fe.dat',skiprows=4)
-CMfull =FL.readRad('./'+floater_folder+'/CM.dat')
-CAfull =FL.readRad('./'+floater_folder+'/CA.dat')
+MIfull =np.loadtxt(base_dir/floater_folder/'MassInertia.dat',skiprows=2)
+KMfull =np.loadtxt(base_dir/floater_folder/'MooringStiffness.dat',skiprows=2)
+KHfull =np.loadtxt(base_dir/floater_folder/'HydrostaticStiffness.dat',skiprows=2)
+BQfull =np.loadtxt(base_dir/floater_folder/'QuadraticDamping.dat',skiprows=2)
+RAOfull=np.loadtxt(base_dir/floater_folder/'Fe.dat',skiprows=4)
+CMfull =FL.readRad(base_dir/floater_folder/'CM.dat')
+CAfull =FL.readRad(base_dir/floater_folder/'CA.dat')
 
 # Set at python 3DoF format
 MI =FL.cutDDL(MIfull)
@@ -200,5 +202,4 @@ plt.show()
 
 ###############################################
 ###############################################
-
 
